@@ -19,6 +19,7 @@ interface messaging-types {
     /// Configuration includes a required list of channels the guest is subscribing to, and an optional list of extensions key-value pairs 
     /// (e.g., partitions/offsets to read from in Kafka/EventHubs, QoS etc.).
     record guest-configuration {
+        service: string,
         channels: list<channel>,
         extensions: option<list<tuple<string, string>>>
     }
